@@ -15,6 +15,6 @@ A variety of programming tasks will be selected based on level of difficulty fro
     *(if less than or equal to 3)*
 
 
-##Background:
+## Background:
 
 *placeholder text*
