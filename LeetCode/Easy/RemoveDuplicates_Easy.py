@@ -41,17 +41,11 @@
 # -100 <= nums[i] <= 100
 # nums is sorted in non-decreasing order.
 
+# PROVIDED CODE
 
-# TODO: Provided Code:
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+      pass
 
-class Solution(object):
-    def removeDuplicates(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        
-
-
-# TODO: #3 ChatGPT Answer:
+# CHATGPT ANSWER:
 
