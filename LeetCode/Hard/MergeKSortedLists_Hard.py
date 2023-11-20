@@ -1,8 +1,13 @@
+# H1: Merge K Sorted Lists
+# https://leetcode.com/problems/merge-k-sorted-lists/
+
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
+
 # You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 
 # Merge all the linked-lists into one sorted linked-list and return it.
-
- 
 
 # Example 1:
 
@@ -36,7 +41,9 @@
 # The sum of lists[i].length will not exceed 10^4.
 
 
+# **********************************************************
 # PROVIDED CODE:
+# **********************************************************
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -47,5 +54,7 @@ class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         pass
 
-# CHATGPT ANSWER:
 
+# **********************************************************
+# CHATGPT ANSWER:
+# **********************************************************

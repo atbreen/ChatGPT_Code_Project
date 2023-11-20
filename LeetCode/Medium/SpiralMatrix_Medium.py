@@ -1,6 +1,11 @@
-# Given an m x n matrix, return all elements of the matrix in spiral order.
+# M5: Spiral Matrix
+# https://leetcode.com/problems/spiral-matrix/
 
- 
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
+
+# Given an m x n matrix, return all elements of the matrix in spiral order.
 
 # Example 1:
 
@@ -21,12 +26,16 @@
 # 1 <= m, n <= 10
 # -100 <= matrix[i][j] <= 100
 
+
+# **********************************************************
 # PROVIDED CODE:
+# **********************************************************
 
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         pass
 
 
+# **********************************************************
 # CHATGPT ANSWER:
-
+# **********************************************************

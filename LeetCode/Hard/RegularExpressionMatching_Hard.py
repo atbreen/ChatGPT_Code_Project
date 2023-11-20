@@ -1,3 +1,10 @@
+# H2: Regular Expression Matching
+# https://leetcode.com/problems/regular-expression-matching/
+
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
+
 # Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
 
 # '.' Matches any single character.​​​​
@@ -31,11 +38,15 @@
 # p contains only lowercase English letters, '.', and '*'.
 # It is guaranteed for each appearance of the character '*', there will be a previous valid character to match.
 
+
+# **********************************************************
 # PROVIDED CODE:
+# **********************************************************
 
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         pass
 
-
+# **********************************************************
 # CHATGPT ANSWER:
+# **********************************************************

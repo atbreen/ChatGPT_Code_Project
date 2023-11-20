@@ -1,3 +1,10 @@
+# H6: Trapping Rainwater
+# https://leetcode.com/problems/trapping-rain-water/
+
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
+
 # Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
 
  
@@ -20,12 +27,13 @@
 # 1 <= n <= 2 * 10^4
 # 0 <= height[i] <= 10^5
 
-
+# **********************************************************
 # PROVIDED CODE:
-
+# **********************************************************
 class Solution:
     def trap(self, height: List[int]) -> int:
         pass
 
-
+# **********************************************************
 # CHATGPT ANSWER:
+# **********************************************************

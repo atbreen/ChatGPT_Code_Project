@@ -1,3 +1,10 @@
+# E4: Pascal's Triangle
+# https://leetcode.com/problems/pascals-triangle/
+
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
+
 # Given an integer numRows, return the first numRows of Pascal's triangle.
 
 # In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
@@ -17,11 +24,15 @@
 # 1 <= numRows <= 30
 
 
+# **********************************************************
 # PROVIDED CODE:
+# **********************************************************
 
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
         pass
 
-# CHATGPT ANSWER:
 
+# **********************************************************
+# CHATGPT ANSWER:
+# **********************************************************

@@ -1,3 +1,10 @@
+# H7: Wild Card Matching
+# https://leetcode.com/problems/wildcard-matching/
+
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
+
 # Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where:
 
 # '?' Matches any single character.
@@ -29,11 +36,16 @@
 # s contains only lowercase English letters.
 # p contains only lowercase English letters, '?' or '*'.
 
+
+# **********************************************************
 # PROVIDED CODE:
+# **********************************************************
 
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         pass
 
-# CHATGPT ANSWER:
 
+# **********************************************************
+# CHATGPT ANSWER:
+# **********************************************************

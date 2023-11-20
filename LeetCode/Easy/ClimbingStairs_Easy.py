@@ -1,4 +1,9 @@
-# Climbing Stairs
+# E1: Climbing Stairs
+# https://leetcode.com/problems/climbing-stairs/
+
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
 
 # You are climbing a staircase. It takes n steps to reach the top.
 
@@ -26,11 +31,15 @@
 
 # 1 <= n <= 45
 
-# PROVIDED CODE:
 
+# **********************************************************
+# PROVIDED CODE:
+# **********************************************************
 class Solution:
     def climbStairs(self, n: int) -> int:
         pass
-        
 
+
+# **********************************************************
 # CHAT GPT ANSWER:
+# **********************************************************

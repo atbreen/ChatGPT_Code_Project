@@ -1,3 +1,11 @@
+# M1: Decode Ways
+# https://leetcode.com/problems/decode-ways/
+
+
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
+
 # A message containing letters from A-Z can be encoded into numbers using the following mapping:
 
 # 'A' -> "1"
@@ -38,12 +46,16 @@
 # 1 <= s.length <= 100
 # s contains only digits and may contain leading zero(s).
 
+
+# **********************************************************
 # PROVIDED CODE:
+# **********************************************************
 
 class Solution:
     def numDecodings(self, s: str) -> int:
         pass
 
 
+# **********************************************************
 # CHATGPT ANSWER:
-
+# **********************************************************

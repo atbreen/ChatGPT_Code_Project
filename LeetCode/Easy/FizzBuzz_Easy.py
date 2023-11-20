@@ -1,3 +1,10 @@
+# E2: FizzBuzz
+# https://leetcode.com/problems/fizz-buzz/
+
+# **********************************************************
+# DESCRIPTION:
+# **********************************************************
+
 # Given an integer n, return a string array answer (1-indexed) where:
 
 # answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
@@ -24,12 +31,16 @@
 
 # 1 <= n <= 10^4
 
+
+# **********************************************************
 # PROVIDED CODE:
+# **********************************************************
 
 class Solution:
     def fizzBuzz(self, n: int) -> List[str]:
         pass
 
 
+# **********************************************************
 # CHATGPT ANSWER:
-
+# **********************************************************
