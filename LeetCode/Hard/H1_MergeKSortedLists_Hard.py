@@ -58,3 +58,139 @@ class Solution:
 # **********************************************************
 # CHATGPT ANSWER:
 # **********************************************************
+
+# GEN 1
+
+import heapq
+from typing import List, Optional
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        heap = []
+        
+        # Add the head of each linked list to the heap
+        for i, lst in enumerate(lists):
+            if lst is not None:
+                heapq.heappush(heap, (lst.val, i, lst))
+        
+        dummy = ListNode()
+        current = dummy
+        
+        while heap:
+            val, i, node = heapq.heappop(heap)
+            
+            # Move to the next node in the selected linked list
+            if node.next is not None:
+                heapq.heappush(heap, (node.next.val, i, node.next))
+            
+            # Add the current node to the merged list
+            current.next = node
+            current = current.next
+        
+        return dummy.next
+
+# Example usage:
+# lists = [[1,4,5], [1,3,4], [2,6]]
+# Convert lists to linked lists
+linked_lists = [ListNode(val) for val in lists[0]]
+for i in range(len(lists)-1):
+    current = linked_lists[i]
+    for val in lists[i+1]:
+        current.next = ListNode(val)
+        current = current.next
+
+solution = Solution()
+result = solution.mergeKLists(linked_lists)
+
+# Print the result
+while result is not None:
+    print(result.val, end="->")
+    result = result.next
+
+
+# GEN 2
+
+from typing import List, Optional
+import heapq
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        # Define a min heap to store (value, node) tuples
+        heap = []
+
+        # Push the first element from each linked list into the heap
+        for i, lst in enumerate(lists):
+            if lst:
+                heapq.heappush(heap, (lst.val, i, lst))
+
+        # Create a dummy node to simplify the code
+        dummy = ListNode()
+        current = dummy
+
+        # Continue until the heap is not empty
+        while heap:
+            # Pop the smallest element from the heap
+            val, i, node = heapq.heappop(heap)
+
+            # Append the smallest element to the result list
+            current.next = ListNode(val)
+            current = current.next
+
+            # Move to the next element in the linked list
+            if node.next:
+                heapq.heappush(heap, (node.next.val, i, node.next))
+
+        return dummy.next
+
+
+# GEN 3
+
+import heapq
+from typing import List, Optional
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        # Create a min heap to keep track of the smallest element among the heads
+        heap = []
+
+        # Push the first element of each list into the heap
+        for i, lst in enumerate(lists):
+            if lst:
+                heapq.heappush(heap, (lst.val, i, lst))
+
+        # Dummy node to simplify the code
+        dummy = ListNode()
+        current = dummy
+
+        # Continue until the heap is not empty
+        while heap:
+            # Pop the smallest element from the heap
+            val, i, node = heapq.heappop(heap)
+            
+            # Move the current pointer to the smallest element
+            current.next = ListNode(val)
+            current = current.next
+            
+            # Move to the next element in the list
+            if node.next:
+                heapq.heappush(heap, (node.next.val, i, node.next))
+
+        return dummy.next
