@@ -59,3 +59,104 @@ class Solution:
 # **********************************************************
 # CHATGPT ANSWER:
 # **********************************************************
+
+# GEN 2
+
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        n = len(s)
+        
+        # Handle edge case where the string is empty
+        if n == 0:
+            return 0
+
+        # Initialize an array to store the number of ways to decode up to index i
+        dp = [0] * (n + 1)
+
+        # There is one way to decode an empty string
+        dp[0] = 1
+
+        # Check each character in the string
+        for i in range(1, n + 1):
+            # Check if the current character is not '0'
+            if s[i - 1] != '0':
+                dp[i] += dp[i - 1]
+
+            # Check if the current character and the previous one form a valid two-digit number
+            if i > 1 and '10' <= s[i - 2:i] <= '26':
+                dp[i] += dp[i - 2]
+
+        return dp[n]
+
+
+solution = Solution()
+print(solution.numDecodings("12"))  # Output: 2
+print(solution.numDecodings("226"))  # Output: 3
+print(solution.numDecodings("06"))   # Output: 0
+
+
+# GEN 2
+
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        # Check if the string is empty or starts with '0', return 0 in such cases
+        if not s or s[0] == '0':
+            return 0
+        
+        # Initialize an array to store the number of ways to decode at each position
+        dp = [0] * (len(s) + 1)
+        
+        # There is one way to decode an empty string
+        dp[0] = 1
+        
+        # There is one way to decode a string of length 1 if it's not '0'
+        dp[1] = 1 if s[0] != '0' else 0
+        
+        # Iterate through the string to fill the dp array
+        for i in range(2, len(dp)):
+            # Check if the current digit is not '0', add the number of ways to decode
+            if s[i-1] != '0':
+                dp[i] += dp[i-1]
+            
+            # Check if the current and previous digits form a valid mapping (between 10 and 26)
+            two_digit = int(s[i-2:i])
+            if 10 <= two_digit <= 26:
+                dp[i] += dp[i-2]
+        
+        # The result is stored at the last position of the dp array
+        return dp[-1]
+
+# Example usage:
+solution = Solution()
+print(solution.numDecodings("12"))  # Output: 2
+print(solution.numDecodings("226"))  # Output: 3
+print(solution.numDecodings("06"))   # Output: 0
+
+
+# GEN 3
+
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        if not s or s[0] == '0':
+            return 0
+
+        n = len(s)
+        dp = [0] * (n + 1)
+        dp[0] = 1  # Empty string has one decoding (base case)
+
+        for i in range(1, n + 1):
+            # Single digit case
+            if s[i - 1] != '0':
+                dp[i] += dp[i - 1]
+
+            # Two-digit case
+            if i > 1 and '10' <= s[i - 2:i] <= '26':
+                dp[i] += dp[i - 2]
+
+        return dp[n]
+
+# Test cases
+sol = Solution()
+print(sol.numDecodings("12"))  # Output: 2
+print(sol.numDecodings("226"))  # Output: 3
+print(sol.numDecodings("06"))   # Output: 0

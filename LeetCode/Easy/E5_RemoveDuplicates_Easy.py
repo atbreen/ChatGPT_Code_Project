@@ -62,3 +62,99 @@ class Solution:
 # **********************************************************
 # CHATGPT ANSWER:
 # **********************************************************
+
+
+# GEN 1
+
+from typing import List
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+
+        # Initialize two pointers
+        i = 0  # slow pointer
+        for j in range(1, len(nums)):
+            # If the current element is different from the previous one,
+            # update the slow pointer and replace the element at slow pointer with the current element
+            if nums[j] != nums[i]:
+                i += 1
+                nums[i] = nums[j]
+
+        # i is the index of the last unique element
+        # the length of unique elements is i + 1
+        return i + 1
+
+# Example usage:
+solution = Solution()
+nums1 = [1, 1, 2]
+result1 = solution.removeDuplicates(nums1)
+print(result1, nums1[:result1])  # Output: 2 [1, 2]
+
+nums2 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+result2 = solution.removeDuplicates(nums2)
+print(result2, nums2[:result2])  # Output: 5 [0, 1, 2, 3, 4]
+
+
+# GEN 2
+
+from typing import List
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        
+        # Initialize pointers
+        slow_ptr = 0
+        
+        # Iterate through the array with fast_ptr
+        for fast_ptr in range(1, len(nums)):
+            # If the current element is not equal to the previous one
+            if nums[fast_ptr] != nums[slow_ptr]:
+                # Move slow_ptr to the next position
+                slow_ptr += 1
+                # Update the value at slow_ptr with the unique element
+                nums[slow_ptr] = nums[fast_ptr]
+        
+        # Return the number of unique elements (k)
+        return slow_ptr + 1
+
+
+# GEN 3
+
+from typing import List
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        
+        # Initialize two pointers
+        i = 0
+        
+        # Iterate through the array
+        for j in range(1, len(nums)):
+            # If the current element is different from the previous one
+            if nums[j] != nums[i]:
+                # Move the pointer and update the value
+                i += 1
+                nums[i] = nums[j]
+        
+        # The unique elements are from index 0 to i (inclusive)
+        # Return the count of unique elements
+        return i + 1
+
+# Example usage:
+solution = Solution()
+
+# Example 1
+nums1 = [1, 1, 2]
+k1 = solution.removeDuplicates(nums1)
+print(f"Output: {k1}, nums = {nums1[:k1]}")
+
+# Example 2
+nums2 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+k2 = solution.removeDuplicates(nums2)
+print(f"Output: {k2}, nums = {nums2[:k2]}")

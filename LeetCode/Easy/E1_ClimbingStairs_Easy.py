@@ -43,3 +43,84 @@ class Solution:
 # **********************************************************
 # CHAT GPT ANSWER:
 # **********************************************************
+
+# GEN 1
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n == 1:
+            return 1
+        elif n == 2:
+            return 2
+
+        # Initialize an array to store the number of ways to reach each step
+        dp = [0] * n
+
+        # Base cases
+        dp[0] = 1
+        dp[1] = 2
+
+        # Build up to the top using dynamic programming
+        for i in range(2, n):
+            dp[i] = dp[i-1] + dp[i-2]
+
+        return dp[-1]
+
+# Example usage:
+sol = Solution()
+print(sol.climbStairs(2))  # Output: 2
+print(sol.climbStairs(3))  # Output: 3
+
+# GEN 2
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+
+        # Initialize an array to store the number of ways to climb for each step
+        dp = [0] * (n + 1)
+
+        # Base cases
+        dp[1] = 1
+        dp[2] = 2
+
+        # Populate the array using dynamic programming
+        for i in range(3, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+
+        return dp[n]
+
+# Example usage:
+solution = Solution()
+print(solution.climbStairs(2))  # Output: 2
+print(solution.climbStairs(3))  # Output: 3
+
+# GEN 3
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+
+        # Initialize a list to store the number of ways to reach each step
+        dp = [0] * (n + 1)
+        
+        # Base cases
+        dp[1] = 1
+        dp[2] = 2
+
+        # Build the list bottom-up
+        for i in range(3, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+
+        return dp[n]
+
+# Example usage:
+solution = Solution()
+print(solution.climbStairs(2))  # Output: 2
+print(solution.climbStairs(3))  # Output: 3

@@ -62,3 +62,104 @@ class Solution:
 # **********************************************************
 # CHATGPT ANSWER:
 # **********************************************************
+
+
+# GEN 1
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_values = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+        
+        total = 0
+        prev_value = 0  # To keep track of the previous symbol's value
+        
+        for symbol in reversed(s):  # Iterate the string in reverse order
+            value = roman_values[symbol]
+            
+            if value < prev_value:
+                total -= value
+            else:
+                total += value
+                
+            prev_value = value  # Update the previous value for the next iteration
+        
+        return total
+
+
+sol = Solution()
+print(sol.romanToInt("III"))      # Output: 3
+print(sol.romanToInt("LVIII"))    # Output: 58
+print(sol.romanToInt("MCMXCIV"))  # Output: 1994
+
+
+# GEN 2
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_to_int_mapping = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+        
+        result = 0
+        prev_value = 0
+        
+        for symbol in s:
+            current_value = roman_to_int_mapping[symbol]
+            
+            # If the current value is greater than the previous, subtract the previous value
+            if current_value > prev_value:
+                result += current_value - 2 * prev_value
+            else:
+                result += current_value
+            
+            prev_value = current_value
+        
+        return result
+
+# Test cases
+solution = Solution()
+print(solution.romanToInt("III"))  # Output: 3
+print(solution.romanToInt("LVIII"))  # Output: 58
+print(solution.romanToInt("MCMXCIV"))  # Output: 1994
+
+
+# GEN 3
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        result = 0
+        prev_value = 0
+
+        for char in s:
+            value = roman_dict[char]
+
+            if value > prev_value:
+                # Subtraction case
+                result += value - 2 * prev_value
+            else:
+                result += value
+
+            prev_value = value
+
+        return result
+
+
+sol = Solution()
+print(sol.romanToInt("III"))      # Output: 3
+print(sol.romanToInt("LVIII"))    # Output: 58
+print(sol.romanToInt("MCMXCIV"))  # Output: 1994
